@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:${MONGO_SERVER_VERSION}
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - 27017:27017
+    restart: ${RESTART_POLICY}
+    volumes:
+      - mongodb-data:/data/db
+    logging:
+      driver: none
+
+  redis:
+    image: redis:${REDIS_SERVER_VERSION}
+    ports:
+      - 6379:6379
+    restart: ${RESTART_POLICY}
+    volumes:
+      - ./conf/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+volumes:
+  mongodb-data:
+    driver: local

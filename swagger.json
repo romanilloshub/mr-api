@@ -1,0 +1,377 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "So we will need to add a description",
+    "title": "Siempre Abierto API",
+    "contact": {
+      "name": "Javi",
+      "url": "https://soriandev.orov.io",
+      "email": "hi@orov.io"
+    },
+    "version": "1.0.0"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "paths": {
+    "/link": {
+      "get": {
+        "description": "Returns list of link",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "link"
+        ],
+        "operationId": "listLink",
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new link",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "link"
+        ],
+        "operationId": "newLink",
+        "parameters": [
+          {
+            "$ref": "#/definitions/ObjectID",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          },
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "Order",
+            "name": "order",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "Icon",
+            "name": "icon",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "Href",
+            "name": "href",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "Label",
+            "name": "label",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "IsNew",
+            "name": "isNew",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/link/{id}": {
+      "get": {
+        "description": "Get one link",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "link"
+        ],
+        "operationId": "getOneLink",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "link ID",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      },
+      "put": {
+        "description": "Update an existing link",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "link"
+        ],
+        "operationId": "updateLink",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "ID of the link",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Invalid link ID"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete an existing link",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "link"
+        ],
+        "operationId": "deleteLink",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "ID of the link",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "404": {
+            "description": "Invalid link ID"
+          }
+        }
+      }
+    },
+    "/video": {
+      "get": {
+        "description": "Returns list of video",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "video"
+        ],
+        "operationId": "listVideo",
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new video",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "video"
+        ],
+        "operationId": "newVideo",
+        "parameters": [
+          {
+            "$ref": "#/definitions/ObjectID",
+            "x-go-name": "ID",
+            "name": "id",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "Title",
+            "name": "title",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "Description",
+            "name": "description",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "YoutubeLink",
+            "name": "youtubeLink",
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "x-go-name": "DownloadLink",
+            "name": "downloadLink",
+            "in": "query"
+          },
+          {
+            "$ref": "#/definitions/Meta",
+            "x-go-name": "Meta",
+            "name": "meta",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/video/{id}": {
+      "get": {
+        "description": "Get one video",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "video"
+        ],
+        "operationId": "getOneVideo",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "video ID",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      },
+      "put": {
+        "description": "Update an existing video",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "video"
+        ],
+        "operationId": "updateVideo",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "ID of the video",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Invalid video ID"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete an existing video",
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "video"
+        ],
+        "operationId": "deleteVideo",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "ID of the video",
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "404": {
+            "description": "Invalid video ID"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Geo": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "string",
+          "x-go-name": "Lat"
+        },
+        "lng": {
+          "type": "string",
+          "x-go-name": "Lng"
+        }
+      },
+      "x-go-package": "orov.io/siempreAbierto/models"
+    },
+    "Meta": {
+      "type": "object",
+      "properties": {
+        "geo": {
+          "$ref": "#/definitions/Geo"
+        },
+        "geoSnapshot": {
+          "type": "string",
+          "x-go-name": "GeoSnapshot"
+        }
+      },
+      "x-go-package": "orov.io/siempreAbierto/models"
+    },
+    "ObjectID": {
+      "type": "array",
+      "title": "ObjectID is the BSON ObjectID type.",
+      "items": {
+        "type": "integer",
+        "format": "uint8"
+      },
+      "x-go-package": "go.mongodb.org/mongo-driver/bson/primitive"
+    }
+  }
+}

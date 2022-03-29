@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+  redis-insight:
+    image: redislabs/redisinsight:${REDIS_INSIGHT_VERSION}
+    ports:
+      - ${REDIS_INSIGHT_PORT}:${REDIS_INSIGHT_PORT}
