@@ -35,6 +35,7 @@ import (
 
 var linkHandler *handlers.LinkHandler
 var videoHandler *handlers.VideoHandler
+var pingHandler *handlers.PingHandler
 
 func init() {
 	ctx := context.Background()
@@ -60,6 +61,7 @@ func init() {
 
 	linkHandler = handlers.NewLinkHandler(ctx, database, redisClient)
 	videoHandler = handlers.NewVideoHandler(ctx, database, redisClient)
+	pingHandler = handlers.NewPingHandler()
 }
 
 func main() {
@@ -84,6 +86,8 @@ func main() {
 	router.PUT("/video/:id", videoHandler.UpdateVideoHandler)
 	router.DELETE("/video/:id", videoHandler.DeleteVideoHandler)
 	router.GET("/video/:id", videoHandler.GetOneVideoHandler)
+
+	router.GET("/ping", pingHandler.Ping)
 
 	router.Run()
 }
