@@ -57,7 +57,7 @@ func init() {
 	})
 
 	status := redisClient.Ping()
-	log.Println(status)
+	log.Printf("Redis: %s\n", status)
 
 	linkHandler = handlers.NewLinkHandler(ctx, database, redisClient)
 	videoHandler = handlers.NewVideoHandler(ctx, database, redisClient)
