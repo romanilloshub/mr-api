@@ -8,8 +8,10 @@ import (
 type Video struct {
 	ID           primitive.ObjectID `json:"id" bson:"_id"`
 	Title        string             `json:"title" bson:"title"`
+	Image        string             `json:"image" bson:"image"`
 	Description  string             `json:"description" bson:"description"`
-	YoutubeLink  string             `json:"youtubeLink" bson:"youtubeLink"`
+	URL          string             `json:"url" bson:"url"`
+	LatLng       []float64          `json:"latlng"`
 	DownloadLink string             `json:"downloadLink" bson:"downloadLink"`
 	Meta         Meta               `json:"meta" bson:"meta"`
 }
@@ -20,6 +22,6 @@ type Meta struct {
 }
 
 type Geo struct {
-	Lat string `json:"lat" bson:"lat"`
-	Lng string `json:"lng" bson:"lng"`
+	Lat float64 `json:"lat" bson:"lat"`
+	Lng float64 `json:"lng" bson:"lng"`
 }

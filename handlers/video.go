@@ -56,6 +56,10 @@ func (handler *VideoHandler) ListVideoHandler(c *gin.Context) {
 			videoList = append(videoList, video)
 		}
 
+		for i, video := range videoList {
+			videoList[i].LatLng = []float64{video.Meta.Geo.Lat, video.Meta.Geo.Lng}
+		}
+
 		data, _ := json.Marshal(videoList)
 		handler.redisClient.Set(videoCollectionName, string(data), 0)
 		c.JSON(http.StatusOK, videoList)
@@ -94,7 +98,6 @@ func (handler *VideoHandler) NewVideoHandler(c *gin.Context) {
 		return
 	}
 
-	log.Println("Removing video data from Redis")
 	handler.redisClient.Del(videoCollectionName)
 
 	c.JSON(http.StatusOK, video)
@@ -132,7 +135,7 @@ func (handler *VideoHandler) UpdateVideoHandler(c *gin.Context) {
 	}, bson.D{{Key: "$set", Value: bson.D{
 		{Key: "title", Value: video.Title},
 		{Key: "description", Value: video.Description},
-		{Key: "youtubeLink", Value: video.YoutubeLink},
+		{Key: "url", Value: video.URL},
 		{Key: "downloadLink", Value: video.DownloadLink},
 		{Key: "meta", Value: video.Meta},
 	}}})
@@ -204,6 +207,8 @@ func (handler *VideoHandler) GetOneVideoHandler(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
+
+	video.LatLng = []float64{video.Meta.Geo.Lat, video.Meta.Geo.Lng}
 
 	c.JSON(http.StatusOK, video)
 }

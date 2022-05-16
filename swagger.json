@@ -219,14 +219,29 @@
           },
           {
             "type": "string",
+            "x-go-name": "Image",
+            "name": "image",
+            "in": "query"
+          },
+          {
+            "type": "string",
             "x-go-name": "Description",
             "name": "description",
             "in": "query"
           },
           {
             "type": "string",
-            "x-go-name": "YoutubeLink",
-            "name": "youtubeLink",
+            "x-go-name": "URL",
+            "name": "url",
+            "in": "query"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-go-name": "LatLng",
+            "name": "latlng",
             "in": "query"
           },
           {
