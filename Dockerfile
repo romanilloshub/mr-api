@@ -13,7 +13,7 @@ FROM alpine
 WORKDIR /
 
 COPY --from=build-env /app/app /app
-COPY /app/CHECKS /CHECKS
+COPY --from=build-env /app/CHECKS /CHECKS
 EXPOSE 8080
 
 ENTRYPOINT [ "/app" ]
