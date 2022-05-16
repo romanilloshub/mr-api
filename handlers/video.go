@@ -204,6 +204,7 @@ func (handler *VideoHandler) GetOneVideoHandler(c *gin.Context) {
 
 	if cur.Err() == mongo.ErrNoDocuments {
 		c.JSON(http.StatusNotFound, gin.H{"message": "Video not found"})
+		return
 	}
 	var video models.Video
 	err := cur.Decode(&video)
