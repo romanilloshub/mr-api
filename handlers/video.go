@@ -94,7 +94,7 @@ func (handler *VideoHandler) NewVideoHandler(c *gin.Context) {
 	video.ID = primitive.NewObjectID()
 	_, err := handler.collection.InsertOne(handler.ctx, video)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error while inserting a new video"})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error while inserting a new video -> " + err.Error()})
 		return
 	}
 
