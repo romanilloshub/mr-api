@@ -38,16 +38,20 @@ var videoHandler *handlers.VideoHandler
 
 func init() {
 	ctx := context.Background()
-	client, _ := mongo.Connect(ctx, options.Client().ApplyURI(os.Getenv("MONGO_URI")))
-	if err := client.Ping(context.TODO(), readpref.Primary()); err != nil {
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(os.Getenv("MONGO_URI")))
+	if err != nil {
+		log.Fatal("Can't connect to database: " + err.Error())
+	}
+
+	if err = client.Ping(context.TODO(), readpref.Primary()); err != nil {
 		log.Fatal(err)
 	}
 	log.Println("Connected to MongoDB")
 	database := client.Database(os.Getenv("MONGO_DATABASE"))
 
 	redisClient := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
-		Password: "",
+		Addr:     os.Getenv("REDIS_HOST"),
+		Password: os.Getenv("REDIS_PASSWORD"),
 		DB:       0,
 	})
 
