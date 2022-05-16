@@ -10,10 +10,10 @@ RUN go build -o app
 
 FROM alpine
 
-WORKDIR /
+WORKDIR /app
 
-COPY --from=build-env /app/app /app
-COPY --from=build-env /app/CHECKS /CHECKS
+COPY --from=build-env /app/app /app/app
+COPY CHECKS /app/CHECKS
 EXPOSE 8080
 
-ENTRYPOINT [ "/app" ]
+ENTRYPOINT [ "/app/app" ]
