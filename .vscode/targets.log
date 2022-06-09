@@ -1,0 +1,500 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu Jun  9 23:39:25 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+GNOME_SHELL_SESSION_MODE = pop
+# environment
+SSH_AGENT_LAUNCHER = gnome-keyring
+# environment
+RWAgentsPackage = /home/orovium/Source/bitbucket.org/triporate/triporate-zammad-package
+# makefile (from '.env', line 11)
+REDIS_SERVER_VERSION = 6.2
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-962aae07-fcac-4052-a774-9ea66cc198b8.sock
+# environment
+MANDATORY_PATH = /usr/share/gconf/pop.mandatory.path
+# environment
+VSCODE_CWD = /home/orovium
+# environment
+RWMonolith = /home/orovium/Source/bitbucket.org/triporate/triporate-india-backend
+# environment
+RWDeployer = /home/orovium/Source/bitbucket.org/triporate/deployer
+# environment
+WINDOWPATH = 2
+# environment
+NVM_DIR = /home/orovium/.nvm
+# default
+MAKE_COMMAND := make
+# makefile (from '.env', line 2)
+RESTART_POLICY = on-failure
+# environment
+QT_ACCESSIBILITY = 1
+# environment
+GOPATH = /home/orovium/go
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/orovium/Source/Github.com/romanillosHub/mr-api
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+XDG_DATA_DIRS = /usr/share/pop:/usr/share/gnome:/home/orovium/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+BASH_IT = /home/orovium/.bash_it
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+RWLoginClient = /home/orovium/Source/bitbucket.org/triporate/triporate-login-client
+# environment
+NVM_INC = /home/orovium/.nvm/versions/node/v16.14.2/include/node
+# environment
+VSCODE_CODE_CACHE_PATH = /home/orovium/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+# makefile (from '.env', line 19)
+MONGO_URI = mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@localhost:27017/${MONGO_DATABASE}?authSource=admin
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# environment
+RWAgentsDockerCompose = /home/orovium/Source/bitbucket.org/triporate/zammad-docker-compose
+# makefile (from '.env', line 16)
+MONGO_USERNAME = ${MONGO_INITDB_ROOT_USERNAME}
+# makefile
+MAKEFLAGS = pqrR
+# makefile (from '.env', line 8)
+MONGO_SERVER_VERSION = 5.0.6
+# makefile
+CURDIR := /home/orovium/Source/Github.com/romanillosHub/mr-api
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# makefile (from 'makefile', line 2)
+# := 
+# environment
+NVM_BIN = /home/orovium/.nvm/versions/node/v16.14.2/bin
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-pop:/etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+SCM_CHECK = true
+# makefile (from '.env', line 7)
+MONGO_INITDB_ROOT_PASSWORD = Capote
+# environment
+XDG_SESSION_DESKTOP = pop
+# environment
+RWAgents = /home/orovium/Source/bitbucket.org/triporate/zammad
+# makefile (from '.override.env', line 1)
+MAKEFILE_LIST := makefile .env .override.env
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 4096
+# environment
+RWUtils = /home/orovium/Source/bitbucket.org/triporate/triporate-utils
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+RWTeToca = /home/orovium/Source/bitbucket.org/triporate/triporate-te-toca
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+RWOfferManager = /home/orovium/Source/bitbucket.org/triporate/triporate-offer-manager
+# makefile (from '.env', line 17)
+MONGO_PASSWORD = ${MONGO_INITDB_ROOT_PASSWORD}
+# makefile (from 'makefile', line 2)
+Compose := 
+# environment
+SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/2935,unix/pop-os:/tmp/.ICE-unix/2935
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+RWDiscoveryClient = /home/orovium/Source/bitbucket.org/triporate/discovery-client
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+RWCompanyDashboardClient = /home/orovium/Source/bitbucket.org/triporate/triporate-company-dashboard
+# makefile (from '.env', line 18)
+MONGO_DATABASE = miRomanillos
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+GIT_HOSTING = git@git.domain.com
+# environment
+CLICOLOR = 
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# makefile (from 'makefile', line 2)
+Recipes-api := 
+# default
+MAKECMDGOALS := all
+# environment
+TODO = t
+# environment
+XMODIFIERS = @im=ibus
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+IRC_CLIENT = irssi
+# makefile (from '.env', line 20)
+REDIS_HOST = localhost:6379
+# environment
+PATH = /home/orovium/.nvm/versions/node/v16.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/local/go/bin
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+RWE2E = /home/orovium/Source/bitbucket.org/triporate/triporate-e2e
+# environment
+RWOfferClient = /home/orovium/Source/bitbucket.org/triporate/triporate-india
+# makefile (from '.env', line 6)
+MONGO_INITDB_ROOT_USERNAME = Truman
+# environment
+BASH_IT_THEME = bobby
+# environment
+INVOCATION_ID = d44251db821d42eabd1311f27ee75909
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+RWSuite = /home/orovium/Source/bitbucket.org/triporate
+# environment
+USERNAME = orovium
+# automatic
+?F = $(notdir $?)
+# makefile (from 'makefile', line 2)
+general := 
+# environment
+GTK_IM_MODULE = ibus
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# makefile (from '.env', line 3)
+COMPOSE_3_PARTY_CLI = docker-compose.3-party-cli.yml
+# automatic
++F = $(notdir $+)
+# environment
+DESKTOP_SESSION = pop
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = pop:GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'makefile', line 2)
+Redis := 
+# environment
+LOGNAME = orovium
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# makefile
+.DEFAULT_GOAL := up
+# environment
+SYSTEMD_EXEC_PID = 2958
+# makefile (from 'makefile', line 2)
+service := 
+# environment
+EDITOR = vim
+# environment
+DISPLAY = :1
+# environment
+USER = orovium
+# environment
+GTK_MODULES = gail:atk-bridge:appmenu-gtk-module
+# environment
+DEFAULTS_PATH = /usr/share/gconf/pop.default.path
+# default
+MAKE_VERSION := 4.3
+# environment
+_printf_cmd = printf
+# 'override' directive
+.SHELLSTATUS := 0
+# environment
+RWDiscoveryService = /home/orovium/Source/bitbucket.org/triporate/discovery-service
+# environment
+MANAGERPID = 2470
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4096
+# makefile (from 'makefile', line 2)
+Server := 
+# makefile (from '.env', line 13)
+REDIS_INSIGHT_PORT = 8001
+# environment
+_ = /usr/share/code/code
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+RWModels = /home/orovium/Source/bitbucket.org/triporate/triporate-models
+# environment
+NVM_CD_FLAGS = 
+# environment
+JOURNAL_STREAM = 8:45121
+# environment
+GOMODCACHE = /home/orovium/go/pkg/mod
+# environment
+VISUAL = vim
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/orovium
+# environment
+QT_IM_MODULE = ibus
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-308b0a9b-1.68.0-main.sock
+# environment
+RWPaymentClient = /home/orovium/Source/bitbucket.org/triporate/triporate-payments
+# environment
+GOPROXY = https://proxy.golang.org,direct
+# default
+.RECIPEPREFIX := 
+# automatic
+ 
+<F = $(notdir $<)
+# makefile (from 'makefile', line 2)
+Mongo := 
+# default
+SUFFIXES := 
+# makefile (from '.env', line 12)
+REDIS_INSIGHT_VERSION = latest
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+RWCore = /home/orovium/Source/bitbucket.org/triporate/triporate-core
+# environment
+XDG_MENU_PREFIX = gnome-
+# makefile (from '.env', line 21)
+REDIS_PASSWORD = 
+# environment
+GDMSESSION = pop
+# variable set hash-table stats:
+# Load=155/1024=15%, Rehash=0, Collisions=16/222=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 64769, inode 14815963): 23 files, no impossibilities.
+
+# 23 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+seed:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 37):
+	docker-compose exec mongo rm -rf ./seeds
+	docker cp ./seeds siempreabierto_mongo_1:./seeds
+	docker-compose exec mongo mongoimport --username ${MONGO_USERNAME} --password ${MONGO_PASSWORD} --authenticationDatabase admin --db ${MONGO_DATABASE} --collection link --file ./seeds/link.json --jsonArray
+	docker-compose exec mongo mongoimport --username ${MONGO_USERNAME} --password ${MONGO_PASSWORD} --authenticationDatabase admin --db ${MONGO_DATABASE} --collection video --file ./seeds/video.json --jsonArray
+	docker-compose exec mongo rm -rf ./seeds
+
+redis-insight:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 48):
+	docker-compose -f ${COMPOSE_3_PARTY_CLI} up -d redis-insight
+	@echo redis insight running in port ${REDIS_INSIGHT_PORT}
+
+# Not a target:
+.env:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-16 20:22:16.396342017
+#  File has been updated.
+#  Successfully updated.
+
+logs:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 16):
+	docker-compose logs -f
+
+up:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 9):
+	@echo ---Initializing all services---
+	docker-compose up -d
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+run:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 29):
+	go run main.go
+
+restart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 19):
+	docker-compose restart
+
+build:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 26):
+	docker-compose build
+
+destroy:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 22):
+	@echo "=============Cleaning up============="
+	docker-compose down -v
+	docker-compose rm -f -v -s
+
+redis-cli-down:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 53):
+	docker-compose -f ${COMPOSE_3_PARTY_CLI} down redis-insight
+
+graph:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 33):
+	go mod graph | modgv | sfdp -Tpng -o graph.png
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-16 15:37:32.653079974
+#  File has been updated.
+#  Successfully updated.
+
+redis-attatch:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	docker-compose exec redis bash
+
+# Not a target:
+.override.env:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-16 15:50:33.808620984
+#  File has been updated.
+#  Successfully updated.
+
+down:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 13):
+	docker-compose down
+
+api-doc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	swagger generate spec -o ./swagger.json
+	swagger serve -F swagger ./swagger.json
+
+redis-cli: redis-insight
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=20/1024=2%, Rehash=0, Collisions=1/33=3%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 42 / storage = 397 B / avg = 9 B
+# current buf: size = 8162 B / used = 397 B / count = 42 / avg = 9 B
+
+# strcache performance: lookups = 65 / hit rate = 35%
+# hash-table stats:
+# Load=42/8192=1%, Rehash=0, Collisions=0/65=0%
+# Finished Make data base on Thu Jun  9 23:39:26 2022
+
+ 

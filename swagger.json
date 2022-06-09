@@ -238,7 +238,8 @@
           {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "number",
+              "format": "double"
             },
             "x-go-name": "LatLng",
             "name": "latlng",
@@ -356,11 +357,13 @@
       "type": "object",
       "properties": {
         "lat": {
-          "type": "string",
+          "type": "number",
+          "format": "double",
           "x-go-name": "Lat"
         },
         "lng": {
-          "type": "string",
+          "type": "number",
+          "format": "double",
           "x-go-name": "Lng"
         }
       },

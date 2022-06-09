@@ -90,6 +90,8 @@ func (handler *VideoHandler) NewVideoHandler(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+	videoLog, _ := json.Marshal(video)
+	log.Printf("The video %s", videoLog)
 
 	video.ID = primitive.NewObjectID()
 	_, err := handler.collection.InsertOne(handler.ctx, video)
@@ -138,6 +140,7 @@ func (handler *VideoHandler) UpdateVideoHandler(c *gin.Context) {
 		{Key: "url", Value: video.URL},
 		{Key: "downloadLink", Value: video.DownloadLink},
 		{Key: "meta", Value: video.Meta},
+		{Key: "link", Value: video.Link},
 	}}})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})

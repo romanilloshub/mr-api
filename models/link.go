@@ -6,10 +6,10 @@ import (
 
 // swagger:parameters link newLink
 type Link struct {
-	ID    primitive.ObjectID `json:"id" bson:"_id"`
-	Order int                `json:"order" bson:"order"`
-	Icon  string             `json:"icon" bson:"icon"`
-	Href  string             `json:"href" bson:"href"`
-	Label string             `json:"label" bson:"label"`
-	IsNew string             `json:"isNew" bson:"isNew"`
+	ID          primitive.ObjectID `json:"id" bson:"_id"`
+	Type        string             `json:"type" bson:"type"`
+	Name        string             `json:"name" bson:"name"`
+	Icon        string             `json:"icon" bson:"icon"`
+	Href        string             `json:"href" bson:"href"`
+	Description string             `json:"desciption" bson:"desciption"`
 }

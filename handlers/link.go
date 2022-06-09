@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"encoding/json"
-	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -41,7 +40,6 @@ func NewLinkHandler(ctx context.Context, database *mongo.Database, redisClient *
 func (handler *LinkHandler) ListLinkHandler(c *gin.Context) {
 	val, err := handler.redisClient.Get(linkCollectionName).Result()
 	if err == redis.Nil {
-		log.Printf("Link list requested to MongoDB")
 		cur, err := handler.collection.Find(handler.ctx, bson.M{})
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
@@ -63,7 +61,6 @@ func (handler *LinkHandler) ListLinkHandler(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	} else {
-		log.Printf("Link list requested to Redis")
 		linkList := make([]models.Link, 0)
 		json.Unmarshal([]byte(val), &linkList)
 		c.JSON(http.StatusOK, linkList)
@@ -94,7 +91,6 @@ func (handler *LinkHandler) NewLinkHandler(c *gin.Context) {
 		return
 	}
 
-	log.Println("Removing link data from Redis")
 	handler.redisClient.Del(linkCollectionName)
 
 	c.JSON(http.StatusOK, link)
@@ -130,10 +126,11 @@ func (handler *LinkHandler) UpdateLinkHandler(c *gin.Context) {
 	_, err := handler.collection.UpdateOne(handler.ctx, bson.M{
 		"_id": objectId,
 	}, bson.D{{Key: "$set", Value: bson.D{
-		{Key: "order", Value: link.Order},
+		{Key: "type", Value: link.Type},
+		{Key: "name", Value: link.Name},
 		{Key: "icon", Value: link.Icon},
 		{Key: "href", Value: link.Href},
-		{Key: "label", Value: link.Label},
+		{Key: "description", Value: link.Description},
 	}}})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
