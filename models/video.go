@@ -15,6 +15,8 @@ type Video struct {
 	DownloadLink string             `json:"downloadLink" bson:"downloadLink"`
 	Meta         Meta               `json:"meta" bson:"meta"`
 	Link         []VideoLink        `json:"link" bson:"link"`
+	QR           string             `json:"qr" bson:"qr"`
+	PostURL      string             `json:"postURL" bson:"postURL"`
 }
 
 type VideoLink struct {

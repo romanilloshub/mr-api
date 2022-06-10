@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  9 23:39:25 2022
+# Make data base, printed on Fri Jun 10 12:29:33 2022
 
 # Variables
 
@@ -27,7 +27,7 @@ REDIS_SERVER_VERSION = 6.2
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-962aae07-fcac-4052-a774-9ea66cc198b8.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-34ab1eec-579f-443a-9bad-dee33e0d6d38.sock
 # environment
 MANDATORY_PATH = /usr/share/gconf/pop.mandatory.path
 # environment
@@ -129,7 +129,7 @@ MAKEFILE_LIST := makefile .env .override.env
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4096
+VSCODE_PID = 4491
 # environment
 RWUtils = /home/orovium/Source/bitbucket.org/triporate/triporate-utils
 # environment
@@ -145,7 +145,7 @@ MONGO_PASSWORD = ${MONGO_INITDB_ROOT_PASSWORD}
 # makefile (from 'makefile', line 2)
 Compose := 
 # environment
-SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/2935,unix/pop-os:/tmp/.ICE-unix/2935
+SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/2931,unix/pop-os:/tmp/.ICE-unix/2931
 # automatic
 *F = $(notdir $*)
 # environment
@@ -207,7 +207,7 @@ MONGO_INITDB_ROOT_USERNAME = Truman
 # environment
 BASH_IT_THEME = bobby
 # environment
-INVOCATION_ID = d44251db821d42eabd1311f27ee75909
+INVOCATION_ID = 24462f06d5a347be8b41e3b74443d8c1
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -241,7 +241,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := up
 # environment
-SYSTEMD_EXEC_PID = 2958
+SYSTEMD_EXEC_PID = 2950
 # makefile (from 'makefile', line 2)
 service := 
 # environment
@@ -263,9 +263,9 @@ _printf_cmd = printf
 # environment
 RWDiscoveryService = /home/orovium/Source/bitbucket.org/triporate/discovery-service
 # environment
-MANAGERPID = 2470
+MANAGERPID = 2641
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4096
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4491
 # makefile (from 'makefile', line 2)
 Server := 
 # makefile (from '.env', line 13)
@@ -280,8 +280,9 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 RWModels = /home/orovium/Source/bitbucket.org/triporate/triporate-models
 # environment
 NVM_CD_FLAGS = 
+ 
 # environment
-JOURNAL_STREAM = 8:45121
+JOURNAL_STREAM = 8:41430
 # environment
 GOMODCACHE = /home/orovium/go/pkg/mod
 # environment
@@ -305,7 +306,6 @@ GOPROXY = https://proxy.golang.org,direct
 # default
 .RECIPEPREFIX := 
 # automatic
- 
 <F = $(notdir $<)
 # makefile (from 'makefile', line 2)
 Mongo := 
@@ -495,6 +495,6 @@ redis-cli: redis-insight
 # strcache performance: lookups = 65 / hit rate = 35%
 # hash-table stats:
 # Load=42/8192=1%, Rehash=0, Collisions=0/65=0%
-# Finished Make data base on Thu Jun  9 23:39:26 2022
+# Finished Make data base on Fri Jun 10 12:29:33 2022
 
  

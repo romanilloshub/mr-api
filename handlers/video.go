@@ -141,6 +141,8 @@ func (handler *VideoHandler) UpdateVideoHandler(c *gin.Context) {
 		{Key: "downloadLink", Value: video.DownloadLink},
 		{Key: "meta", Value: video.Meta},
 		{Key: "link", Value: video.Link},
+		{Key: "qr", Value: video.QR},
+		{Key: "postURL", Value: video.PostURL},
 	}}})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
