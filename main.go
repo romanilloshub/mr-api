@@ -36,6 +36,7 @@ import (
 var linkHandler *handlers.LinkHandler
 var videoHandler *handlers.VideoHandler
 var pingHandler *handlers.PingHandler
+var assetLinks *handlers.AssetLinksHandler
 var qrHandler *handlers.QRHandler
 
 func init() {
@@ -63,6 +64,7 @@ func init() {
 	linkHandler = handlers.NewLinkHandler(ctx, database, redisClient)
 	videoHandler = handlers.NewVideoHandler(ctx, database, redisClient)
 	qrHandler = handlers.NewQRHandler(ctx, database, redisClient)
+	assetLinks = handlers.NewAssetLinks()
 	pingHandler = handlers.NewPingHandler()
 }
 
@@ -90,6 +92,7 @@ func main() {
 	router.GET("/video/:id", videoHandler.GetOneVideoHandler)
 
 	router.GET("/siempre-abierto/video/qr/:qr", qrHandler.RedirectToVideoByQR)
+	router.GET("/.well-known/assetlinks.json", assetLinks.SendManifest)
 
 	router.GET("/ping", pingHandler.Ping)
 
