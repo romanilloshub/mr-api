@@ -31,6 +31,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 	"orov.io/siempreAbierto/handlers"
+	"orov.io/siempreAbierto/plugin/auth"
 )
 
 var linkHandler *handlers.LinkHandler
@@ -38,6 +39,8 @@ var videoHandler *handlers.VideoHandler
 var pingHandler *handlers.PingHandler
 var assetLinks *handlers.AssetLinksHandler
 var qrHandler *handlers.QRHandler
+var adminHandler *handlers.AdminHandler
+var authMiddleware *auth.AuthMiddleware
 
 func init() {
 	ctx := context.Background()
@@ -66,6 +69,8 @@ func init() {
 	qrHandler = handlers.NewQRHandler(ctx, database, redisClient)
 	assetLinks = handlers.NewAssetLinks()
 	pingHandler = handlers.NewPingHandler()
+	adminHandler = handlers.NewAdminHandler()
+	authMiddleware = auth.NewAuthMiddleware(ctx)
 }
 
 func main() {
@@ -95,6 +100,12 @@ func main() {
 	router.GET("/.well-known/assetlinks.json", assetLinks.SendManifest)
 
 	router.GET("/ping", pingHandler.Ping)
+
+	router.GET("/authenticated-ping", authMiddleware.LoggedUser, pingHandler.Ping)
+	router.GET("/admin-ping", authMiddleware.WithRol("admin"), pingHandler.Ping)
+
+	//router.POST("/admin", adminHandler.New)
+	router.GET("/admin", authMiddleware.WithRol("admin"), adminHandler.GetUser)
 
 	router.Run()
 }

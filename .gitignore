@@ -19,3 +19,5 @@ graph.png
 .override.env
 docker-compose.override.yml
 *.code-workspace
+
+firebase.json

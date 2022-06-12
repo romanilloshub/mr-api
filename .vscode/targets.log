@@ -7,8 +7,9 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Fri Jun 10 12:29:33 2022
+# Make data base, printed on Sun Jun 12 11:07:47 2022
 
 # Variables
 
@@ -27,7 +28,7 @@ REDIS_SERVER_VERSION = 6.2
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-34ab1eec-579f-443a-9bad-dee33e0d6d38.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fac943e6-9789-426a-9e4d-2395715b58a4.sock
 # environment
 MANDATORY_PATH = /usr/share/gconf/pop.mandatory.path
 # environment
@@ -129,7 +130,7 @@ MAKEFILE_LIST := makefile .env .override.env
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4491
+VSCODE_PID = 5390
 # environment
 RWUtils = /home/orovium/Source/bitbucket.org/triporate/triporate-utils
 # environment
@@ -145,7 +146,7 @@ MONGO_PASSWORD = ${MONGO_INITDB_ROOT_PASSWORD}
 # makefile (from 'makefile', line 2)
 Compose := 
 # environment
-SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/2931,unix/pop-os:/tmp/.ICE-unix/2931
+SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/3300,unix/pop-os:/tmp/.ICE-unix/3300
 # automatic
 *F = $(notdir $*)
 # environment
@@ -207,7 +208,7 @@ MONGO_INITDB_ROOT_USERNAME = Truman
 # environment
 BASH_IT_THEME = bobby
 # environment
-INVOCATION_ID = 24462f06d5a347be8b41e3b74443d8c1
+INVOCATION_ID = 51859fbb1daf491ea23f81cd6ce10973
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -241,7 +242,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := up
 # environment
-SYSTEMD_EXEC_PID = 2950
+SYSTEMD_EXEC_PID = 3322
 # makefile (from 'makefile', line 2)
 service := 
 # environment
@@ -263,9 +264,9 @@ _printf_cmd = printf
 # environment
 RWDiscoveryService = /home/orovium/Source/bitbucket.org/triporate/discovery-service
 # environment
-MANAGERPID = 2641
+MANAGERPID = 3004
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4491
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5390
 # makefile (from 'makefile', line 2)
 Server := 
 # makefile (from '.env', line 13)
@@ -280,9 +281,8 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 RWModels = /home/orovium/Source/bitbucket.org/triporate/triporate-models
 # environment
 NVM_CD_FLAGS = 
- 
 # environment
-JOURNAL_STREAM = 8:41430
+JOURNAL_STREAM = 8:40771
 # environment
 GOMODCACHE = /home/orovium/go/pkg/mod
 # environment
@@ -327,6 +327,7 @@ GDMSESSION = pop
 # Load=155/1024=15%, Rehash=0, Collisions=16/222=7%
 
 # Pattern-specific Variable Values
+ 
 
 # No pattern-specific variable values.
 
@@ -472,6 +473,7 @@ api-doc:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  recipe to execute (from 'makefile', line 56):
 	swagger generate spec -o ./swagger.json
 	swagger serve -F swagger ./swagger.json
@@ -482,6 +484,7 @@ redis-cli: redis-insight
 #  File has not been updated.
 
 # files hash-table stats:
+ 
 # Load=20/1024=2%, Rehash=0, Collisions=1/33=3%
 # VPATH Search Paths
 
@@ -495,6 +498,6 @@ redis-cli: redis-insight
 # strcache performance: lookups = 65 / hit rate = 35%
 # hash-table stats:
 # Load=42/8192=1%, Rehash=0, Collisions=0/65=0%
-# Finished Make data base on Fri Jun 10 12:29:33 2022
+# Finished Make data base on Sun Jun 12 11:07:47 2022
 
  
