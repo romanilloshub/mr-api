@@ -21,3 +21,5 @@ docker-compose.override.yml
 *.code-workspace
 
 firebase.json
+
+.vscode/

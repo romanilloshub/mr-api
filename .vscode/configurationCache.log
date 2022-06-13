@@ -1,1 +1,0 @@
-{"buildTargets":["api-doc","build","destroy","down","graph","logs","redis-attatch","redis-cli","redis-cli-down","redis-insight","restart","run","seed","up"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
