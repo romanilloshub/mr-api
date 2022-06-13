@@ -81,7 +81,7 @@ func main() {
 		AllowHeaders:  []string{"Content-Type", "Authorization"},
 		ExposeHeaders: []string{"Content-Length"},
 		AllowOriginFunc: func(origin string) bool {
-			return strings.HasPrefix(origin, "http://localhost") || strings.HasPrefix(origin, "https://ngrok")
+			return strings.HasPrefix(origin, "http://localhost") || strings.HasPrefix(origin, "https://ngrok") || strings.HasPrefix(origin, "https://admin.romanillos.net")
 		},
 	}))
 

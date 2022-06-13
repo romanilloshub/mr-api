@@ -24,7 +24,7 @@ type VideoLink struct {
 	Name        string `json:"name" bson:"name"`
 	Icon        string `json:"icon" bson:"icon"`
 	Href        string `json:"href" bson:"href"`
-	Description string `json:"desciption" bson:"desciption"`
+	Description string `json:"description" bson:"description"`
 }
 
 type Meta struct {
