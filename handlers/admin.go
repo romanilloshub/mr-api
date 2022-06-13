@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"context"
-	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -18,9 +17,9 @@ func NewAdminHandler() *AdminHandler {
 
 func (handler *AdminHandler) New(c *gin.Context) {
 	email := c.Query("email")
+	pass := c.Query("pass")
 	authUtil := auth.NewUtil(context.Background())
-	err := authUtil.NewAdmin(email)
-	log.Printf("The error: %s\n", err)
+	err := authUtil.NewAdmin(email, pass)
 
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})

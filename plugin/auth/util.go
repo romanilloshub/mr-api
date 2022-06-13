@@ -18,9 +18,11 @@ func NewUtil(ctx context.Context) *AuthUtil {
 	}
 }
 
-func (util *AuthUtil) NewAdmin(email string) error {
+func (util *AuthUtil) NewAdmin(email string, pass string) error {
 	admin := &auth.UserToCreate{}
 	admin.Email(email)
+	admin.Password(pass)
+	admin.EmailVerified(true)
 	user, err := util.firebaseClient.CreateUser(util.ctx, admin)
 	if err != nil {
 		return err

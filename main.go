@@ -105,7 +105,7 @@ func main() {
 	router.GET("/authenticated-ping", authMiddleware.LoggedUser, pingHandler.Ping)
 	router.GET("/admin-ping", authMiddleware.WithRol("admin"), pingHandler.Ping)
 
-	//router.POST("/admin", adminHandler.New)
+	// router.POST("/admin", adminHandler.New)
 	router.GET("/admin", authMiddleware.WithRol("admin"), adminHandler.GetUser)
 
 	router.Run()
