@@ -78,6 +78,7 @@ func main() {
 
 	router.Use(cors.New(cors.Config{
 		AllowMethods:  []string{http.MethodGet, http.MethodPost, http.MethodDelete, http.MethodPut, http.MethodOptions},
+		AllowHeaders:  []string{"Content-Type", "Authorization"},
 		ExposeHeaders: []string{"Content-Length"},
 		AllowOriginFunc: func(origin string) bool {
 			return strings.HasPrefix(origin, "http://localhost") || strings.HasPrefix(origin, "https://ngrok")
