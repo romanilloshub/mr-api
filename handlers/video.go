@@ -136,6 +136,7 @@ func (handler *VideoHandler) UpdateVideoHandler(c *gin.Context) {
 		"_id": objectId,
 	}, bson.D{{Key: "$set", Value: bson.D{
 		{Key: "title", Value: video.Title},
+		{Key: "image", Value: video.Image},
 		{Key: "description", Value: video.Description},
 		{Key: "url", Value: video.URL},
 		{Key: "downloadLink", Value: video.DownloadLink},
