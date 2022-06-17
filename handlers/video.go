@@ -221,5 +221,9 @@ func (handler *VideoHandler) GetOneVideoHandler(c *gin.Context) {
 
 	video.LatLng = []float64{video.Meta.Geo.Lat, video.Meta.Geo.Lng}
 
+	if len(video.Link) == 0 {
+		video.Link = make([]models.VideoLink, 0)
+	}
+
 	c.JSON(http.StatusOK, video)
 }
