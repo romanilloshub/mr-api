@@ -98,6 +98,7 @@ func main() {
 	router.GET("/video/:id", videoHandler.GetOneVideoHandler)
 
 	router.GET("/siempre-abierto/video/qr/:qr", qrHandler.RedirectToVideoByQR)
+        router.GET("/siempre-abierto/app/qr/47244846-5012-4e30-9fd7-e700b5c20df5", qrHandler.DownloadApp)
 	router.GET("/.well-known/assetlinks.json", assetLinks.SendManifest)
 
 	router.GET("/ping", pingHandler.Ping)
