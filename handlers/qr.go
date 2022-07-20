@@ -62,3 +62,7 @@ func (handler *QRHandler) RedirectToVideoByQR(c *gin.Context) {
 	}
 	c.Redirect(http.StatusTemporaryRedirect, blogURL)
 }
+
+func (handler *QRHandler) DownloadApp (c *gin.Context) {
+	c.Redirect(http.StatusTemporaryRedirect, "https://blog.romanillos.net/app")
+}
