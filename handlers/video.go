@@ -209,6 +209,10 @@ func (handler *VideoHandler) GetOneVideoHandler(c *gin.Context) {
 	})
 
 	if cur.Err() == mongo.ErrNoDocuments {
+		cur = handler.findByQR(id)
+	}
+
+	if cur.Err() == mongo.ErrNoDocuments {
 		c.JSON(http.StatusNotFound, gin.H{"message": "Video not found"})
 		return
 	}
@@ -222,4 +226,10 @@ func (handler *VideoHandler) GetOneVideoHandler(c *gin.Context) {
 	video.LatLng = []float64{video.Meta.Geo.Lat, video.Meta.Geo.Lng}
 
 	c.JSON(http.StatusOK, video)
+}
+
+func (handler *VideoHandler) findByQR(qr string) *mongo.SingleResult {
+	return handler.collection.FindOne(handler.ctx, bson.M{
+		"qr": qr,
+	})
 }
