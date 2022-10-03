@@ -6,17 +6,18 @@ import (
 
 // swagger:parameters video newVideo
 type Video struct {
-	ID           primitive.ObjectID `json:"id" bson:"_id"`
-	Title        string             `json:"title" bson:"title"`
-	Image        string             `json:"image" bson:"image"`
-	Description  string             `json:"description" bson:"description"`
-	URL          string             `json:"url" bson:"url"`
-	LatLng       []float64          `json:"latlng"`
-	DownloadLink string             `json:"downloadLink" bson:"downloadLink"`
-	Meta         Meta               `json:"meta" bson:"meta"`
-	Link         []VideoLink        `json:"link" bson:"link"`
-	QR           string             `json:"qr" bson:"qr"`
-	PostURL      string             `json:"postURL" bson:"postURL"`
+	ID           primitive.ObjectID  `json:"id" bson:"_id"`
+	Title        string              `json:"title" bson:"title"`
+	Image        string              `json:"image" bson:"image"`
+	Description  string              `json:"description" bson:"description"`
+	URL          string              `json:"url" bson:"url"`
+	LatLng       []float64           `json:"latlng"`
+	DownloadLink string              `json:"downloadLink" bson:"downloadLink"`
+	Meta         Meta                `json:"meta" bson:"meta"`
+	Link         []VideoLink         `json:"link" bson:"link"`
+	QR           string              `json:"qr" bson:"qr"`
+	PostURL      string              `json:"postURL" bson:"postURL"`
+	Comment      []map[string]string `json:"comment"`
 }
 
 type VideoLink struct {

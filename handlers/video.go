@@ -2,8 +2,11 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
+	"io"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis"
@@ -36,8 +39,9 @@ func NewVideoHandler(ctx context.Context, database *mongo.Database, redisClient 
 // produces:
 // - application/json
 // responses:
-//     '200':
-//         description: Successful operation
+//
+//	'200':
+//	    description: Successful operation
 func (handler *VideoHandler) ListVideoHandler(c *gin.Context) {
 	val, err := handler.redisClient.Get(videoCollectionName).Result()
 	if err == redis.Nil {
@@ -80,10 +84,11 @@ func (handler *VideoHandler) ListVideoHandler(c *gin.Context) {
 // produces:
 // - application/json
 // responses:
-//     '200':
-//         description: Successful operation
-//     '400':
-//         description: Invalid input
+//
+//	'200':
+//	    description: Successful operation
+//	'400':
+//	    description: Invalid input
 func (handler *VideoHandler) NewVideoHandler(c *gin.Context) {
 	var video models.Video
 	if err := c.ShouldBindJSON(&video); err != nil {
@@ -109,20 +114,22 @@ func (handler *VideoHandler) NewVideoHandler(c *gin.Context) {
 // Update an existing video
 // ---
 // parameters:
-// - name: id
-//   in: path
-//   description: ID of the video
-//   required: true
-//   type: string
+//   - name: id
+//     in: path
+//     description: ID of the video
+//     required: true
+//     type: string
+//
 // produces:
 // - application/json
 // responses:
-//     '200':
-//         description: Successful operation
-//     '400':
-//         description: Invalid input
-//     '404':
-//         description: Invalid video ID
+//
+//	'200':
+//	    description: Successful operation
+//	'400':
+//	    description: Invalid input
+//	'404':
+//	    description: Invalid video ID
 func (handler *VideoHandler) UpdateVideoHandler(c *gin.Context) {
 	id := c.Param("id")
 	var video models.Video
@@ -166,11 +173,13 @@ func (handler *VideoHandler) UpdateVideoHandler(c *gin.Context) {
 //     description: ID of the video
 //     required: true
 //     type: string
+//
 // responses:
-//     '200':
-//         description: Successful operation
-//     '404':
-//         description: Invalid video ID
+//
+//	'200':
+//	    description: Successful operation
+//	'404':
+//	    description: Invalid video ID
 func (handler *VideoHandler) DeleteVideoHandler(c *gin.Context) {
 	id := c.Param("id")
 	objectId, _ := primitive.ObjectIDFromHex(id)
@@ -198,9 +207,11 @@ func (handler *VideoHandler) DeleteVideoHandler(c *gin.Context) {
 //     description: video ID
 //     required: true
 //     type: string
+//
 // responses:
-//     '200':
-//         description: Successful operation
+//
+//	'200':
+//	    description: Successful operation
 func (handler *VideoHandler) GetOneVideoHandler(c *gin.Context) {
 	id := c.Param("id")
 	objectId, _ := primitive.ObjectIDFromHex(id)
@@ -224,6 +235,26 @@ func (handler *VideoHandler) GetOneVideoHandler(c *gin.Context) {
 	}
 
 	video.LatLng = []float64{video.Meta.Geo.Lat, video.Meta.Geo.Lng}
+
+	// TODO: pass JWT if present in headers
+	commentResponse, err := http.Get(fmt.Sprintf("%v/entity/%v", os.Getenv("COMMENT_SERVICE_URI"), video.ID.Hex()))
+	if err != nil {
+		fmt.Printf("Unable to obtain video comments for video %v due to: %v", video.ID.Hex(), err)
+	}
+	data, err := io.ReadAll(commentResponse.Body)
+	if err != nil {
+		fmt.Printf("Unable to obtain video comments for video %v due to: %v", video.ID.Hex(), err)
+	}
+
+	fmt.Printf("Requested data: %v\n", string(data))
+
+	videoComments := make([]map[string]string, 0)
+	err = json.Unmarshal(data, &videoComments)
+	if err != nil {
+		fmt.Printf("Unable to obtain video comments for video %v due to: %v", video.ID.Hex(), err)
+	}
+
+	video.Comment = videoComments
 
 	c.JSON(http.StatusOK, video)
 }

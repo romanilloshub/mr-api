@@ -28,6 +28,9 @@ build:
 run:
 	go run main.go
 
+air:
+	air
+
 # Code
 graph:
 	go mod graph | modgv | sfdp -Tpng -o graph.png
