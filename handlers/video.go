@@ -248,7 +248,7 @@ func (handler *VideoHandler) GetOneVideoHandler(c *gin.Context) {
 
 	fmt.Printf("Requested data: %v\n", string(data))
 
-	videoComments := make([]map[string]string, 0)
+	videoComments := make([]map[string]interface{}, 0)
 	err = json.Unmarshal(data, &videoComments)
 	if err != nil {
 		fmt.Printf("Unable to obtain video comments for video %v due to: %v", video.ID.Hex(), err)
